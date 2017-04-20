@@ -1,0 +1,56 @@
+//package com.fdmgroup.filter;
+//
+//import java.io.IOException;
+//import java.time.LocalDate;
+//import java.time.LocalTime;
+//
+//import javax.servlet.Filter;
+//import javax.servlet.FilterChain;
+//import javax.servlet.FilterConfig;
+//import javax.servlet.ServletException;
+//import javax.servlet.ServletRequest;
+//import javax.servlet.ServletResponse;
+//import javax.servlet.annotation.WebFilter;
+//import javax.servlet.http.HttpServletRequest;
+//
+//import com.fdmgroup.util.AppLogger;
+//
+///**
+// * Servlet Filter implementation class LoggingFilter
+// */
+//@WebFilter("/*")
+//public class LoggingFilter implements Filter {
+//
+//    /**
+//     * Default constructor. 
+//     */
+//    public LoggingFilter() {
+//       
+//    }
+//
+//	/**
+//	 * @see Filter#destroy()
+//	 */
+//	public void destroy() {
+//		AppLogger.getSysLogger().info("Logging filter destroyed...");
+//	}
+//
+//	/**
+//	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
+//	 */
+//	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+//		String ip = request.getRemoteAddr();
+//		String resource = ((HttpServletRequest)request).getRequestURL().toString();
+//		
+//		AppLogger.getUserLogger().info(ip + "-->" + LocalDate.now() + " " + LocalTime.now() + "-->" + resource);
+//		chain.doFilter(request, response);
+//	}
+//
+//	/**
+//	 * @see Filter#init(FilterConfig)
+//	 */
+//	public void init(FilterConfig fConfig) throws ServletException {
+//		AppLogger.getSysLogger().info("Logging filter destroyed...");
+//	}
+//
+//}
